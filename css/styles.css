@@ -1,7 +1,9 @@
 /*==============================
 	Global
 ==============================*/
-
+p {
+	line-height:1.5em;
+}
 
 /*==============================
 	Structure & Layout 
@@ -11,28 +13,34 @@
 	width: 960px;
 }
 
+article{
+	padding-top:200px;
+}
+
 
 /*==============================
 	Logo
 ==============================*/
 header h1 a {
-	background: #ccc url("../img/logo.png");
-
+	background: #ccc url("../img/logo.png") no-repeat center;
+	border-radius: 150px;
 	border: 4px solid #fff;
 	display: block;
 	height: 150px;
 	left: 40px;
 	position: absolute;
-
+	text-indent: -999em;
 	width: 150px;
+	z-index:2;
 
 	
 	/* CSS 3*/
+	transition: background .25s;
 
 }
 
 header h1 a:hover {
-	background: #666;
+	background: #666 url("../img/logo.png") no-repeat center;
 }
 
 
@@ -40,7 +48,7 @@ header h1 a:hover {
 	Navigation
 ==============================*/
 header {
-
+	position:relative;
 }
 
 header li {
@@ -51,36 +59,39 @@ header li {
 
 /* Remove inherited margin on <ul> */
 header ul {
-
+	margin:0;
 }
 
 /* Push links far right w/o floats */
-nav li {
+nav li:nth-child(1) {
 	margin-left: 450px;
 }
 
 nav {
 	background: #666;	
 	height: 64px;
-
+	position:absolute;
 	left: 0;
 	top: 42px;
 	width: 960px;
+	z-index:0;
 	
 	/* CSS3 */
+	box-shadow: 0px 0px 5px 2px;
 
 }
 
 nav a:link,
 nav a:visited {
 	color: #fff;
-	height: 64px;
+	height: 50px;
 	display: block;
-
+	line-height:50px;
 	text-align: center;	
 	text-decoration: none;
 	text-transform: uppercase;
 	width: 128px;
+	transition:margin-top .25s;
 	
 	/*CSS 3*/
 
@@ -95,10 +106,11 @@ nav a:active {
 /*==============================
 	Navigation: Page Indicators
 ==============================*/
-.about, 
-.students,
-.contact {
+.about li:nth-child(1) a, 
+.students li:nth-child(2) a,
+.contact li:nth-child(3) a{
 	background: rgba(255,255,255,.15);
+	border-radius:10px;
 }
 
 
@@ -122,7 +134,7 @@ nav a:active {
 
 	list-style: none;
 	margin: 20px 0 0 20px;
-
+	position: relative;
 	width: 440px;
 }
 
@@ -132,9 +144,11 @@ nav a:active {
 	color: #fff;
 	left: -20px;
 	padding: 10px;
+	position:absolute;
 
 	
 	/* CSS 3*/
+	box-shadow: 0 10px 20px #222;
 
 }
 
@@ -148,6 +162,7 @@ nav a:active {
 	border-color: #333 transparent transparent transparent;
 	bottom: -39px;
 	border-width: 20px;
+	z-index:-1;
 
 }
 
